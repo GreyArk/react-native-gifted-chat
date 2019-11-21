@@ -13,10 +13,8 @@ README.md
 ISSUE_TEMPLATE.md
 codecov.yml
 media/
-App.js
 app.json
 metro.config.js
-src/
 tsconfig.json
 tslint.json
 yarn.lock
