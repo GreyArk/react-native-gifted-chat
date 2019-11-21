@@ -86,9 +86,7 @@ export default class Send extends Component<SendProps> {
           accessibilityLabel='send'
           style={[styles.container, containerStyle]}
           onPress={() => {
-            if (text && onSend) {
-              onSend({ text: text.trim() }, true)
-            }
+            onSend({ text: text.trim() }, true)
           }}
           accessibilityTraits='button'
           disabled={disabled}
