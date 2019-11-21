@@ -421,6 +421,14 @@ class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
     if (text !== prevProps.text) {
       this.setTextFromProp(text)
     }
+    
+    if (prevProps.minInputToolbarHeight !== this.props.minInputToolbarHeight) {
+      this.setState({
+        messagesContainerHeight: this.prepareMessagesContainerHeight(
+          this.getBasicMessagesContainerHeight(),
+        ),
+      })
+    }
   }
 
   initLocale() {
@@ -519,9 +527,7 @@ class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
   }
 
   getMinInputToolbarHeight() {
-    return this.props.renderAccessory
-      ? this.props.minInputToolbarHeight! * 2
-      : this.props.minInputToolbarHeight
+    return this.props.minInputToolbarHeight
   }
 
   calculateInputToolbarHeight(composerHeight: number) {
